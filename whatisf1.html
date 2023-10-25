@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>whatisf1</title>
+    <style>
+        @font-face { 
+        font-family: 'Formula1-Display-Bold';  /* 폰트 명 */
+        font-style: normal;  /* 폰트 스타일 설정 */
+        font-weight: 100; /* 폰트 투께 */ 
+        src: url('./Formula1-Display-Bold.eot'); /* IE9 미만 */
+        src: local('Formula1-Display-Bold'),/* 웹 브라우저가 지원하지 않는 불필요한 웹 폰트 호출을 막는데 사용 */
+        url('./font/Formula1-Display-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+        url('./font/Formula1-Display-Bold.woff2') format('woff2'),  /* WOFF의 차기 포맷 */
+        url('./font/Formula1-Display-Bold.woff') format('woff'),  /* 표준 브라우저 */
+        url('./font/Formula1-Display-Bold.ttf') format('truetype'),  /* Safari, Android, iOS */
+        url('./font/Formula1-DisplayE-Bold.svg#Formula1-Display-Bold') format('svg');/* TTF에서도 커버가 안되는 기기들에 대한 대응 */
+        }
+    </style>
+    <style>
+        @font-face { 
+      font-family: 'Formula1-Display-Regular';  /* 폰트 명 */
+      font-style: normal;  /* 폰트 스타일 설정 */
+      font-weight: 100; /* 폰트 투께 */ 
+      src: url('./Formula1-Display-Regular.eot'); /* IE9 미만 */
+      src: local('Formula1-Display-Regular'),/* 웹 브라우저가 지원하지 않는 불필요한 웹 폰트 호출을 막는데 사용 */
+      url('./font/Formula1-Display-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+      url('./font/Formula1-Display-Regular.woff2') format('woff2'),  /* WOFF의 차기 포맷 */
+      url('./font/Formula1-Display-Regular.woff') format('woff'),  /* 표준 브라우저 */
+      url('./font/Formula1-Display-Regular.ttf') format('truetype'),  /* Safari, Android, iOS */
+      url('./font/Formula1-DisplayE-Regular.svg#Formula1-Display-Regular') format('svg');/* TTF에서도 커버가 안되는 기기들에 대한 대응 */
+      }
+    </style>
+    <style>
+        * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        }
+        ul li {
+            list-style-type: none;
+        }
+        #logo{
+            folat:left;
+            margin-left: 35px;
+            margin-top: 20px;
+            margin-bottom: 15px;
+            z-index: 1;
+        }
+        #menu{
+            float:right;
+            font:bold 15px "suit";
+            margin-right: 30px;
+            margin-top: -60px;
+            text-align: center;
+            display: flex;
+            z-index: 1;
+            font-family: 'Formula1-Display-Regular';
+        }
+        #menu ul li{
+            float:right;
+            width: 140px;
+            position: relative;
+        }
+        #menu ul a:hover{
+            color:red;
+        }
+        table, tr, th{
+                font:14px "suit";
+                border: solid 0px rgb(255,255,255);
+                border-collapse: collapse;
+                margin-left: 360px;
+                margin-right: 360px;
+                vertical-align: top;
+        }
+
+        td{
+            border: solid 0px rgb(255,255,255);
+            border-collapse: collapse;
+            margin-left: 360px;
+            vertical-align: top;
+            font:14px suit;
+        }
+        
+        #h12{
+        margin-left:300px;
+        color:red;
+        font-family: 'Formula1-Display-Bold';
+        font-weight: 500;
+        font-style: normal;
+        }
+
+        #h13{
+           color:black;
+           font-family: suit;
+           font-style: bold;
+           font-family: 'Formula1-Display-Regular';
+        }
+        a {
+        text-decoration: none;
+        color: inherit;
+        }
+
+        a:hover {
+        text-decoration: none;
+        color: your-desired-color;
+        }
+        .p1{
+            padding-left: 15px;
+        }
+        #gogo{
+            text-align: right;
+            padding-right: 15px;
+        }
+        .padding-1{
+            padding-top: 30px;
+        }
+        #f1font{
+            font-family: 'Formula1-Display-bold';
+        }
+        footer {
+            background-color: red;
+            color: white;
+            padding: 20px;
+            padding: 20px -30px;
+            margin: 0;
+            margin-top: 130px;
+        }
+
+        .social-icon {
+            font-size: 24px;
+            margin: 0 5px;
+        }
+        .right{
+            float:right;
+            font:bold 15px "suit";
+            margin-right: 30px;
+            margin-top: 0px;
+            text-align: center;
+            display: flex;
+            z-index: 1;
+            font-family: 'Formula1-Display-Regular';
+        }
+        .right{
+            float:right;
+            font:bold 15px "suit";
+            margin-right: 30px;
+            margin-top: 0px;
+            text-align: center;
+            display: flex;
+            z-index: 1;
+            font-family: 'Formula1-Display-Regular';
+        }
+
+        .right ul li{
+            float:right;
+            width: 140px;
+            position: relative;
+        }
+        #p1{
+            font-family: suit;
+            font-size: 10px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="logo">
+        <a href="index.html">
+            <img src="./img/f1.svg.png" width="150">
+        </a>
+    </div>
+    <div id="menu">
+        <ul>
+            <li>
+                <a href="Winners.html">Winners</a>
+            </li>
+            <li>
+                <a href="Schedule.html">Schedule</a>
+            </li>
+            <li>
+                <a href="Drivers.html">Drivers</a>
+            </li>
+            <li>
+                <a href="Teams.html">Teams</a>
+            </li>
+            <li>
+                <a href="whatisf1.html">What is f1?</a>
+            </li>
+        </ul>
+    </div>
+    <br><br>
+    <h1 id="h12">What is f1?</h1>
+    <table>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><img src='img/sparkle.png' width="480"></td>
+                <td class="padding-1"><span><h1 id="h13">&nbsp; Why is it called Formula 1?</h1>
+                    <p class="p1">왜 포뮬러 1 이라고 불리는지에는 두 가지 이유가 있는데,<br>
+                    첫 째, '포뮬러'는 모든 경쟁사가 준수해야 하는 자동차 디자인, 엔진 크기, 
+                    구성 요소 사용 등을 포함하는 하나의 규칙이다.<br>둘 째,'원' 또는 '1' 은 단순히 최고의 포뮬러임을 의미한다.</span></td></p>
+            </tr>
+            <tr>
+                <td class="padding-1" id="gogo"><span><br><br><h1 id="h13">An incredible speed</h1>
+                    <p class="p1">직선 최대 속도 370km/h, 커브 중력은 5G를 경험하게 된다.</p>
+                </td>
+                <td><img src='img/f0.png' width="480"></td>
+            </tr>
+            <tr>
+                <td><img src='img/f0.jpeg' width="480"></td>
+                <td class="padding-1"><span><h1 id="h13">&nbsp; 1st step. Qualifying</h1>
+                    <p class="p1">본 경기의 그리드 순서를 결정하는 퀄리파잉은 우승에 다가가는 첫 걸음이다. 
+                        정해진 시간 안에 가장 빠른 랩 타임을 가진 드라이버가 윗 순위를 차지하게 되며, 총 3라운드로 진행된다. </span></td></p>
+            </tr>
+            <tr>
+                <td class="padding-1" id="gogo"><span><br><br><h1 id="h13">2nd step. Race</h1>
+                    <p class="p1" id="f1font">It's lights out, And away we go!</p>
+                    <p>5개의 불이 꺼진 후 경기는 시작하게 된다. 폴 포지션을 차지한 드라이버를 따라 출발하게 되며,
+                         앞 차를 추월해가며 2시간 가량의 긴 레이스가 진행된다. 적게는 44랩, 많게는 78랩으로 진행된다. </div> </p>
+                </td>
+                <td><img src='img/f00.jpg' width="480"></td>
+            </tr>
+            <tr>
+                <td><img src='img/horray.jpg' width="480"></td>
+                <td class="padding-1"><span><h1 id="h13">&nbsp; Race point</h1>
+                    <p class="p1">1위부터 10위까지 포인트가 차등 부여되며,
+                        이러한 점수는 개인 기록인 월드 챔피언과 팀의 우승인 컨스트럭터 챔피언에 기여하게 된다. </span></td></p>
+            </tr>
+        </tbody>
+    </table>
+    <footer>
+        <!-- 로고 이미지와 소셜 미디어 링크 추가 -->
+        <a href="#" target="_blank">
+            <img src="img/f1-gray.png" alt="로고" class="logo" width="90"></a>
+        <ul class="right">
+            <li>
+                <a href="https://www.facebook.com/Formula1" target="_blank"><img src="img/pngegg (1).png" alt="로고" width="20" class="right">
+                    <i class="fab fa-facebook social-icon"></i>
+            </li>
+            <li>
+                <a href="https://twitter.com/f1" target="_blank">&nbsp;<img src="img/pngegg (3).png" alt="로고" width="20" class="right">
+            <i class="fab fa-twitter social-icon"></i>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/f1/" target="_blank"><img src="img/pngegg (2).png" alt="로고" width="20" class="right">
+                    <i class="fab fa-instagram social-icon"></i>
+            </li>
+            <li>
+                <a href="https://www.youtube.com/F1" target="_blank"><img src="img/pngegg (5).png" alt="로고" width="20" class="right">
+                    <i class="fab fa-instagram social-icon"></i>
+            </li>
+        </ul><br><br>
+        <p id="p1">© 2003-2023 Formula One World Championship Limited</p>
+
+    </div>
+    </footer>
+</body>
+</html>

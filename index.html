@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중간 메인</title>
+        <style>
+            @font-face { 
+        font-family: 'Formula1-Display-Bold';  /* 폰트 명 */
+        font-style: normal;  /* 폰트 스타일 설정 */
+        font-weight: 100; /* 폰트 투께 */ 
+        src: url('./Formula1-Display-Bold.eot'); /* IE9 미만 */
+        src: local('Formula1-Display-Bold'),/* 웹 브라우저가 지원하지 않는 불필요한 웹 폰트 호출을 막는데 사용 */
+        url('./font/Formula1-Display-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+        url('./font/Formula1-Display-Bold.woff2') format('woff2'),  /* WOFF의 차기 포맷 */
+        url('./font/Formula1-Display-Bold.woff') format('woff'),  /* 표준 브라우저 */
+        url('./font/Formula1-Display-Bold.ttf') format('truetype'),  /* Safari, Android, iOS */
+        url('./font/Formula1-DisplayE-Bold.svg#Formula1-Display-Bold') format('svg');/* TTF에서도 커버가 안되는 기기들에 대한 대응 */
+        }
+        </style>
+        <style>
+            @font-face { 
+          font-family: 'Formula1-Display-Regular';  /* 폰트 명 */
+          font-style: normal;  /* 폰트 스타일 설정 */
+          font-weight: 100; /* 폰트 투께 */ 
+          src: url('./Formula1-Display-Regular.eot'); /* IE9 미만 */
+          src: local('Formula1-Display-Regular'),/* 웹 브라우저가 지원하지 않는 불필요한 웹 폰트 호출을 막는데 사용 */
+          url('./font/Formula1-Display-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+          url('./font/Formula1-Display-Regular.woff2') format('woff2'),  /* WOFF의 차기 포맷 */
+          url('./font/Formula1-Display-Regular.woff') format('woff'),  /* 표준 브라우저 */
+          url('./font/Formula1-Display-Regular.ttf') format('truetype'),  /* Safari, Android, iOS */
+          url('./font/Formula1-DisplayE-Regular.svg#Formula1-Display-Regular') format('svg');/* TTF에서도 커버가 안되는 기기들에 대한 대응 */
+          }
+        </style>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .wrapper { 
+            position: relative;
+            width: 1200px;
+            margin: 0 auto;
+            padding: 0 ;
+        }
+        ul li {
+            list-style-type: none;
+        }
+        #logo{
+            folat:left;
+            margin-left: 35px;
+            margin-top: 20px;
+            margin-bottom: 15px;
+            z-index: 1;
+            
+        }
+        #menu{
+            float:right;
+            font:bold 15px "suit";
+            margin-right: 30px;
+            margin-top: -60px;
+            text-align: center;
+            display: flex;
+            z-index: 1;
+            font-family: 'Formula1-Display-Regular';
+        }
+        #menu ul li{
+            float:right;
+            width: 140px;
+            position: relative;
+        }
+        #menu ul a:hover{
+            color:red;
+        }
+        table, tr, th, td{
+                font:14px "suit";
+                text-align: center;
+                border: solid 0px rgb(255,255,255);
+                border-collapse: collapse;
+                padding: 3px;
+                margin-left: 180px;
+        }
+        a {
+        text-decoration: none;
+        color: inherit;
+        }
+
+        a:hover {
+        text-decoration: none;
+        color: your-desired-color;
+        }
+        body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        }
+        .video-container {
+        position: relative;
+        height: 90vh;
+        overflow: hidden;
+        }
+
+        video {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        }
+        .text-overlay {
+            position: absolute;
+            top: 80%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+            font-style: bold;
+            font-size: 20px;
+        }
+        #h12{
+            font-family: 'Formula1-Display-Bold';
+            font-weight: 500;
+            font-style: normal;
+        }
+        .text-with-shadow {
+            font-family: 'Formula1-Display-Regular';
+            font-weight: 100;
+            font-style: normal;
+            font-size: 20px;
+            text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+
+        }
+        .text-with-shadow {
+            font-size: 20px;
+            text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+        }
+        footer {
+            background-color: red;
+            color: white;
+            padding: 20px;
+        }
+
+        .social-icon {
+            font-size: 24px;
+            margin: 0 5px;
+        }
+        .right{
+            float:right;
+            font:bold 15px "suit";
+            margin-right: 30px;
+            margin-top: 0px;
+            text-align: center;
+            display: flex;
+            z-index: 1;
+            font-family: 'Formula1-Display-Regular';
+        }
+        .right{
+            float:right;
+            font:bold 15px "suit";
+            margin-right: 30px;
+            margin-top: 0px;
+            text-align: center;
+            display: flex;
+            z-index: 1;
+            font-family: 'Formula1-Display-Regular';
+        }
+
+        .right ul li{
+            float:right;
+            width: 140px;
+            position: relative;
+        }
+        .p1313{
+            font-family: suit;
+            font-size: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="logo">
+        <a href="index.html">
+            <img src="./img/f1.svg.png" width="150">
+        </a>
+    </div>
+    <div id="menu">
+        <ul>
+            <li>
+                <a href="Winners.html">Winners</a>
+            </li>
+            <li>
+                <a href="Schedule.html">Schedule</a>
+            </li>
+            <li>
+                <a href="Drivers.html">Drivers</a>
+            </li>
+            <li>
+                <a href="Teams.html">Teams</a>
+            </li>
+            <li>
+                <a href="whatisf1.html">What is f1?</a>
+            </li>
+        </ul>
+    </div>
+    <div class="video-container">
+        <video autoplay loop muted>
+          <source src="img/F1_2023.mp4" type="video/mp4">
+        </video>
+        <div class="text-overlay text-with-shadow">
+            Our big game? We do it 23 times a year. This is no ordinary sport.
+            <h1 id="h12">This is Formula 1</h1>
+        </div>
+    </div>
+    <footer>
+        <!-- 로고 이미지와 소셜 미디어 링크 추가 -->
+        <a href="#" target="_blank">
+            <img src="img/f1-gray.png" alt="로고" class="logo" width="90"></a>
+        <ul class="right">
+            <li>
+                <a href="https://www.facebook.com/Formula1" target="_blank"><img src="img/pngegg (1).png" alt="로고" width="20" class="right">
+                    <i class="fab fa-facebook social-icon"></i>
+            </li>
+            <li>
+                <a href="https://twitter.com/f1" target="_blank">&nbsp;<img src="img/pngegg (3).png" alt="로고" width="20" class="right">
+            <i class="fab fa-twitter social-icon"></i>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/f1/" target="_blank"><img src="img/pngegg (2).png" alt="로고" width="20" class="right">
+                    <i class="fab fa-instagram social-icon"></i>
+            </li>
+            <li>
+                <a href="https://www.youtube.com/F1" target="_blank"><img src="img/pngegg (5).png" alt="로고" width="20" class="right">
+                    <i class="fab fa-instagram social-icon"></i>
+            </li>
+        </ul><br><br>
+        <p class="p1313">© 2003-2023 Formula One World Championship Limited</p>
+
+    </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drivers</title>
+    <style>
+        @font-face { 
+        font-family: 'Formula1-Display-Bold';  /* 폰트 명 */
+        font-style: normal;  /* 폰트 스타일 설정 */
+        font-weight: 100; /* 폰트 투께 */ 
+        src: url('./Formula1-Display-Bold.eot'); /* IE9 미만 */
+        src: local('Formula1-Display-Bold'),/* 웹 브라우저가 지원하지 않는 불필요한 웹 폰트 호출을 막는데 사용 */
+        url('./font/Formula1-Display-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+        url('./font/Formula1-Display-Bold.woff2') format('woff2'),  /* WOFF의 차기 포맷 */
+        url('./font/Formula1-Display-Bold.woff') format('woff'),  /* 표준 브라우저 */
+        url('./font/Formula1-Display-Bold.ttf') format('truetype'),  /* Safari, Android, iOS */
+        url('./font/Formula1-DisplayE-Bold.svg#Formula1-Display-Bold') format('svg');/* TTF에서도 커버가 안되는 기기들에 대한 대응 */
+        }
+    </style>
+    <style>
+        @font-face { 
+      font-family: 'Formula1-Display-Regular';  /* 폰트 명 */
+      font-style: normal;  /* 폰트 스타일 설정 */
+      font-weight: 100; /* 폰트 투께 */ 
+      src: url('./Formula1-Display-Regular.eot'); /* IE9 미만 */
+      src: local('Formula1-Display-Regular'),/* 웹 브라우저가 지원하지 않는 불필요한 웹 폰트 호출을 막는데 사용 */
+      url('./font/Formula1-Display-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+      url('./font/Formula1-Display-Regular.woff2') format('woff2'),  /* WOFF의 차기 포맷 */
+      url('./font/Formula1-Display-Regular.woff') format('woff'),  /* 표준 브라우저 */
+      url('./font/Formula1-Display-Regular.ttf') format('truetype'),  /* Safari, Android, iOS */
+      url('./font/Formula1-DisplayE-Regular.svg#Formula1-Display-Regular') format('svg');/* TTF에서도 커버가 안되는 기기들에 대한 대응 */
+      }
+    </style>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            }
+
+        .wrapper {
+                position: relative;
+                width: 1200px;
+                margin: 0 auto;
+                padding: 0 ;
+        }
+
+        .flex-box{
+            display: flex;
+        }
+
+        
+        ul li {
+            list-style-type: none;
+        }
+        #logo{
+            margin-left: 35px;
+            margin-top: 20px;
+            margin-bottom: 15px;
+            z-index: 1;
+        }
+        #menu{
+            float:right;
+            font:bold 15px "suit";
+            margin-right: 30px;
+            margin-top: -60px;
+            text-align: center;
+            display: flex;
+            z-index: 1;
+            font-family: 'Formula1-Display-Regular';
+        }
+        #menu ul li{
+            float:right;
+            width: 140px;
+            position: relative;
+        }
+        #menu ul a:hover{
+            color:red;
+        }
+        a {
+        text-decoration: none; 
+        color: inherit; 
+        }
+
+        a:hover {
+        text-decoration: none; 
+        }
+        
+        #h12{
+            color:red;
+            font-family: 'Formula1-Display-Bold';
+            font-weight: 500;
+            font-style: normal;
+            margin-top: 100px;
+        }
+        a {
+        text-decoration: none;
+        color: inherit;
+        }
+
+        .drivers-list {
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        font-family: 'Playfair Display', serif;
+        }
+        
+        .drivers-list > div {
+            height: 400px;
+            border: 3px solid white;
+            font-family: suit;
+        }
+
+        .drivers-txt{
+            color: white;
+        }
+
+        .outBox {
+            position: relative;
+            width: 295px;
+            height: 260px;
+            overflow: hidden;
+        }
+
+        .inBox {
+            position: absolute;
+        }
+
+        .inBox > img {
+            width: 250px;
+            height: 260px;
+            margin-left: 30px;
+            margin-top: 20px;
+        }
+
+        .drivers-list div:hover .inBox {
+            transform: scale(1.15);
+            transition: 0.5s;
+        }
+
+        .drivers-list  h4{
+            margin-top: 10px;
+            font-size: 20px;
+        }
+
+        .drivers-list  h4,
+        .drivers-list  p{
+            margin-left: 20px;
+        }
+
+        .drivers-txt{
+            position: relative;
+        }
+
+
+        .nation img{
+            width: 50px;
+            position: absolute;
+            right: 20px;
+            top: 10px;
+        }
+
+        
+
+        .drivers1 {
+            background-color: rgb(9, 9, 116); 
+        }
+
+        .drivers2 {
+            background-color: rgb(9, 9, 116); 
+        }
+
+        .drivers3 {
+            background-color: #00A19B
+        }
+
+        .drivers4 {
+            background-color: #037A68
+        }
+
+        .drivers5 {
+            background-color: #ba0104;
+        }
+
+        .drivers6 {
+            background-color: #ba0104;
+        }
+
+        .drivers7 {
+            background-color: #FF8000
+        }
+
+        .drivers8 {
+            background-color: #00A19B
+        }
+
+        .drivers9 {
+            background-color: #FF8000
+        }
+
+        .drivers10 {
+            background-color: #037A68
+        }
+
+
+        .drivers11 {
+            background-color: #2173B8
+        }
+
+        .drivers12 {
+            background-color: #2173B8
+        }
+
+        .drivers13 {
+            background-color: #00A0DE
+        }
+
+        .drivers14 {
+            background-color: #A42134
+        }
+
+        .drivers15 {
+            background-color: rgb(143, 143, 143); 
+        }
+
+        .drivers16 {
+            background-color: #A42134
+        }
+
+        .drivers17 {
+            background-color: #20394C
+        }
+
+        .drivers18 {
+            background-color: rgb(143, 143, 143); 
+        }
+
+        .drivers19 {
+            background-color: #20394C
+        }
+        
+        .drivers20 {
+            background-color: #00A0DE
+        }
+
+        .drivers21 {
+            background-color: #20394C
+        }
+        
+        .drivers22 {
+            background-color: #20394C
+        }
+        footer {
+            background-color: red;
+            color: white;
+            padding: 20px;
+            margin-top: 100px;
+        }
+
+        .social-icon {
+            font-size: 24px;
+            margin: 0 5px;
+        }
+        .right{
+            float:right;
+            font:bold 15px "suit";
+            margin-right: 30px;
+            margin-top: 0px;
+            text-align: center;
+            display: flex;
+            z-index: 1;
+            font-family: 'Formula1-Display-Regular';
+        }
+        .right{
+            float:right;
+            font:bold 15px "suit";
+            margin-right: 30px;
+            margin-top: 0px;
+            text-align: center;
+            display: flex;
+            z-index: 1;
+            font-family: 'Formula1-Display-Regular';
+        }
+
+        .right ul li{
+            float:right;
+            width: 140px;
+            position: relative;
+        }
+        .p1{
+            font-family: suit;
+            font-size: 10px;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div id="logo">
+        <a href="index.html">
+            <img src="./img/f1.svg.png" width="150">
+        </a>
+    </div>
+    <div id="menu">
+        <ul>
+            <li>
+                <a href="Winners.html">Winners</a>
+            </li>
+            <li>
+                <a href="Schedule.html">Schedule</a>
+            </li>
+            <li>
+                <a href="Drivers.html">Drivers</a>
+            </li>
+            <li>
+                <a href="Teams.html">Teams</a>
+            </li>
+            <li>
+                <a href="whatisf1.html">What is f1?</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="wrapper">
+        <h1 id="h12">Drivers</h1>
+        <div class="drivers-list">
+            <div class="drivers1">
+                <div class="drivers-imgbox">
+                    <div class="outBox">
+                        <div class="inBox">
+                            <img src="./img/막스.avif">
+                        </div>
+                    </div>   
+                </div>
+                <div class="drivers-txt">
+                    <div class="flex-box">
+                        <h4>Max Verstappen</h4>
+                        <div class="nation">
+                            <img src="./img/네덜란드.avif">
+                        </div>
+                    </div><!--flex-box-->
+                    <p>433PTS</p>
+                </div><!--drivers-txt-->
+            </div>
+            <div class="drivers2">
+                <div class="outBox">
+                    <div class="inBox">
+                        <img src="./img/페레즈.avif">
+                    </div>
+                </div>
+                <div class="drivers-txt">
+                    <div class="flex-box">
+                        <h4>Sergio Pérez </h4>
+                        <div class="nation">
+                            <img src="./img/멕시코.avif">
+                        </div>
+                    </div><!--flex-box-->
+                    <p>224PTS</p>
+                </div><!--drivers-txt-->   
+            </div>
+            <div class="drivers3">
+                <div class="outBox">
+                    <div class="inBox">
+                        <img src="./img/햄.avif">
+                    </div>
+                </div>
+                <div class="drivers-txt">
+                    <div class="flex-box">
+                        <h4>Lewis Hamilton</h4>
+                        <div class="nation">
+                            <img src="./img/영국.avif">
+                        </div>
+                    </div><!--flex-box-->
+                    <p>194PTS</p>
+                </div><!--drivers-txt-->       
+            </div>
+            <div class="drivers4">
+                <div class="outBox">
+                    <div class="inBox">
+                        <img src="./img/알론소.avif">
+                    </div>
+                </div>
+                <div class="drivers-txt">
+                    <div class="flex-box">
+                        <h4>Fernando Alonso</h4>
+                        <div class="nation">
+                            <img src="./img/스페인.avif">
+                        </div>
+                    </div><!--flex-box-->
+                    <p>183PTS</p>
+                </div><!--drivers-txt-->   
+            </div>
+            <div class="drivers5">
+                <div class="outBox">
+                    <div class="inBox">
+                        <img src="./img/사인츠.avif">
+                    </div>
+                </div>
+                <div class="drivers-txt">
+                    <div class="flex-box">
+                        <h4>Carlos Sainz</h4>
+                        <div class="nation">
+                            <img src="./img/스페인.avif">
+                        </div>
+                    </div><!--flex-box-->
+                    <p>153PTS</p>
+                </div><!--drivers-txt-->   
+            </div>
+            <div class="drivers6">
+                <div class="outBox">
+                    <div class="inBox">
+                        <img src="./img/르끌.avif">
+                    </div>
+                </div>
+                <div class="drivers-txt">
+                    <div class="flex-box">
+                        <h4>Charles Leclerc</h4>
+                        <div class="nation">
+                            <img src="./img/모나코.avif">
+                        </div>
+                    </div><!--flex-box-->
+                    <p>145PTS</p>
+                </div><!--drivers-txt-->   
+            </div>
+            <div class="drivers7">
+                <div class="outBox">
+                    <div class="inBox">
+                        <img src="./img/노리스.avif">
+                    </div>
+                </div>
+                <div class="drivers-txt">
+                    <div class="flex-box">
+                        <h4>Lando Norris</h4>
+                        <div class="nation">
+                            <img src="./img/영국.avif">
+                        </div>
+                    </div><!--flex-box-->
+                    <p>136PTS</p>
+                </div><!--drivers-txt-->   
+            </div>
+            <div class="drivers8">
+                <div class="outBox">
+                    <div class="inBox">
+                        <img src="./img/조지.avif">
+                    </div>
+                </div>
+                <div class="drivers-txt">
+                    <div class="flex-box">
+                        <h4>George Russell</h4>
+                        <div class="nation">
+                            <img src="./img/영국.avif">
+                        </div>
+                    </div><!--flex-box-->
+                    <p>132PTS</p>
+                </div><!--drivers-txt-->   
+            </div>
+            <div class="drivers9">
+                <div class="outBox">
+                    <div class="inBox">
+                        <img src="./img/피아스트리.avif">
+                    </div>
+                </div>
+                <div class="drivers-txt">
+                    <div class="flex-box">
+                        <h4>Oscar Piastri</h4>
+                        <div class="nation">
+                            <img src="./img/호주.avif">
+                        </div>
+                    </div><!--flex-box-->
+                    <p>83PTS</p>
+                </div><!--drivers-txt-->   
+            </div>
+            <div class="drivers10">
+                <div class="outBox">
+                    <div class="inBox">
+                        <img src="./img/스트롤.avif">
+                    </div>
+                </div>
+                <div class="drivers-txt">
+                    <div class="flex-box">
+                        <h4>Lance Stroll</h4>
+                        <div class="nation">
+                            <img src="./img/캐나다.avif">
+                        </div>
+                    </div><!--flex-box-->
+                    <p>47PTS</p>
+                </div><!--drivers-txt-->   
+            </div>
+
+            <div class="drivers11">
+                <div class="drivers-imgbox">
+                    <div class="outBox">
+                        <div class="inBox">
+                            <img src="./img/가슬리.avif">
+                        </div>
+                    </div>   
+                </div>
+                <div class="drivers-txt">
+                    <div class="flex-box">
+                        <h4>Pierre Gasly</h4>
+                        <div class="nation">
+                            <img src="./img/프랑스.avif">
+                        </div>
+                    </div><!--flex-box-->
+                    <p>46PTS</p>
+                </div><!--drivers-txt-->   
+            </div>
+            <div class="drivers12">
+                <div class="outBox">
+                    <div class="inBox">
+                        <img src="./img/오콘.avif">
+                    </div>
+                </div>
+                <div class="drivers-txt">
+                    <div class="flex-box">
+                        <h4>Esteban Ocon</h4>
+                        <div class="nation">
+                            <img src="./img/프랑스.avif">
+                        </div>
+                    </div><!--flex-box-->
+                    <p>44PTS</p>
+                </div><!--drivers-txt-->   
+            </div>
+            <div class="drivers13">
+                <div class="outBox">
+                    <div class="inBox">
+                        <img src="./img/알본.avif">
+                    </div>
+                </div>
+                <div class="drivers-txt">
+                    <div class="flex-box">
+                        <h4>Alexander Albon</h4>
+                        <div class="nation">
+                            <img src="./img/태국.avif">
+                        </div>
+                    </div><!--flex-box-->
+                    <p>23PTS</p>
+                </div><!--drivers-txt-->   
+            </div>
+            <div class="drivers14">
+                <div class="outBox">
+                    <div class="inBox">
+                        <img src="./img/보타스.avif">
+                    </div>
+                </div>
+                <div class="drivers-txt">
+                    <div class="flex-box">
+                        <h4>Valtteri Bottas</h4>
+                        <div class="nation">
+                            <img src="./img/핀란드.avif">
+                        </div>
+                    </div><!--flex-box-->
+                    <p>10PTS</p>
+                </div><!--drivers-txt-->   
+            </div>
+            <div class="drivers15">
+                <div class="outBox">
+                    <div class="inBox">
+                        <img src="./img/헐크.avif">
+                    </div>
+                </div>
+                <div class="drivers-txt">
+                    <div class="flex-box">
+                        <h4>Nico Hülkenberg</h4>
+                        <div class="nation">
+                            <img src="./img/독일.avif">
+                        </div>
+                    </div><!--flex-box-->
+                    <p>9PTS</p>
+                </div><!--drivers-txt-->   
+            </div>
+            <div class="drivers16">
+                <div class="outBox">
+                    <div class="inBox">
+                        <img src="./img/저우.avif">
+                    </div>
+                </div>
+                <div class="drivers-txt">
+                    <div class="flex-box">
+                        <h4>Zhou Guanyu</h4>
+                        <div class="nation">
+                            <img src="./img/중국.avif">
+                        </div>
+                    </div><!--flex-box-->
+                    <p>6PTS</p>
+                </div><!--drivers-txt-->   
+            </div>
+            <div class="drivers17">
+                <div class="outBox">
+                    <div class="inBox">
+                        <img src="./img/유키.avif">
+                    </div>
+                </div>
+                <div class="drivers-txt">
+                    <div class="flex-box">
+                        <h4>Yuki Tsunoda</h4>
+                        <div class="nation">
+                            <img src="./img/일본.avif">
+                        </div>
+                    </div><!--flex-box-->
+                    <p>3PTS</p>
+                </div><!--drivers-txt-->   
+            </div>
+            <div class="drivers18">
+                <div class="outBox">
+                    <div class="inBox">
+                        <img src="./img/케빈.avif">
+                    </div>
+                </div>
+                <div class="drivers-txt">
+                    <div class="flex-box">
+                        <h4>Kevin Magnussen</h4>
+                        <div class="nation">
+                            <img src="./img/독일.avif">
+                        </div>
+                    </div><!--flex-box-->
+                    <p>3PTS</p>
+                </div><!--drivers-txt-->   
+            </div>
+            <div class="drivers19">
+                <div class="outBox">
+                    <div class="inBox">
+                        <img src="./img/로슨.avif">
+                    </div>
+                </div>
+                <div class="drivers-txt">
+                    <div class="flex-box">
+                        <h4>Liam Lawson</h4>
+                        <div class="nation">
+                            <img src="./img/뉴질랜드.avif">
+                        </div>
+                    </div><!--flex-box-->
+                    <p>2PTS</p>
+                </div><!--drivers-txt-->   
+            </div>
+            <div class="drivers20">
+                <div class="outBox">
+                    <div class="inBox">
+                        <img src="./img/사전트.avif">
+                    </div>
+                </div>
+                <div class="drivers-txt">
+                    <div class="flex-box">
+                        <h4>Logan Sargeant</h4>
+                        <div class="nation">
+                            <img src="./img/미국.avif">
+                        </div>
+                    </div><!--flex-box-->
+                    <p>0PTS</p>
+                </div><!--drivers-txt-->   
+            </div>
+            <div class="drivers21">
+                <div class="outBox">
+                    <div class="inBox">
+                        <img src="./img/드브리스.avif">
+                    </div>
+                </div>
+                <div class="drivers-txt">
+                    <div class="flex-box">
+                        <h4>Nyck de Vries</h4>
+                        <div class="nation">
+                            <img src="./img/네덜란드.avif">
+                        </div>
+                    </div><!--flex-box-->
+                    <p>0PTS</p>
+                </div><!--drivers-txt-->   
+            </div>
+            <div class="drivers22">
+                <div class="outBox">
+                    <div class="inBox">
+                        <img src="./img/리카도.avif">
+                    </div>
+                </div>
+                <div class="drivers-txt">
+                    <div class="flex-box">
+                        <h4>Daniel Ricciardo</h4>
+                        <div class="nation">
+                            <img src="./img/호주.avif">
+                        </div>
+                    </div><!--flex-box-->
+                    <p>0PTS</p>
+                </div><!--drivers-txt-->   
+            </div>
+            
+        </div><!--driver-list-->
+    </div><!--wrapper-->   
+    <footer>
+        <!-- 로고 이미지와 소셜 미디어 링크 추가 -->
+        <a href="#" target="_blank">
+            <img src="img/f1-gray.png" alt="로고" class="logo" width="90"></a>
+        <ul class="right">
+            <li>
+                <a href="https://www.facebook.com/Formula1" target="_blank"><img src="img/pngegg (1).png" alt="로고" width="20" class="right">
+                    <i class="fab fa-facebook social-icon"></i>
+            </li>
+            <li>
+                <a href="https://twitter.com/f1" target="_blank">&nbsp;<img src="img/pngegg (3).png" alt="로고" width="20" class="right">
+            <i class="fab fa-twitter social-icon"></i>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/f1/" target="_blank"><img src="img/pngegg (2).png" alt="로고" width="20" class="right">
+                    <i class="fab fa-instagram social-icon"></i>
+            </li>
+            <li>
+                <a href="https://www.youtube.com/F1" target="_blank"><img src="img/pngegg (5).png" alt="로고" width="20" class="right">
+                    <i class="fab fa-instagram social-icon"></i>
+            </li>
+        </ul><br><br>
+        <p class="p1">© 2003-2023 Formula One World Championship Limited</p>
+
+    </div>
+    </footer>
+</body>
+</html>
