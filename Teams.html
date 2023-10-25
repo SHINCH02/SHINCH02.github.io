@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teams</title>
+    <style>
+            @font-face { 
+        font-family: 'Formula1-Display-Bold';
+        font-style: normal;
+        font-weight: 100;
+        src: url('./Formula1-Display-Bold.eot'); 
+        src: local('Formula1-Display-Bold'),
+        url('./font/Formula1-Display-Bold.eot?#iefix') format('embedded-opentype'),
+        url('./font/Formula1-Display-Bold.woff2') format('woff2'),
+        url('./font/Formula1-Display-Bold.woff') format('woff'),
+        url('./font/Formula1-Display-Bold.ttf') format('truetype'), 
+        url('./font/Formula1-DisplayE-Bold.svg#Formula1-Display-Bold') format('svg');
+        }
+    </style>
+    <style>
+        @font-face { 
+      font-family: 'Formula1-Display-Regular'; 
+      font-style: normal;  
+      font-weight: 100; 
+      src: url('./Formula1-Display-Regular.eot'); 
+      src: local('Formula1-Display-Regular'),
+      url('./font/Formula1-Display-Regular.eot?#iefix') format('embedded-opentype'), 
+      url('./font/Formula1-Display-Regular.woff2') format('woff2'),  
+      url('./font/Formula1-Display-Regular.woff') format('woff'), 
+      url('./font/Formula1-Display-Regular.ttf') format('truetype'), 
+      url('./font/Formula1-DisplayE-Regular.svg#Formula1-Display-Regular') format('svg');
+      }
+    </style>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .wrapper {
+            width: 1200px;
+            margin: 0 auto;
+            padding: 0 ;
+        }
+
+        
+        ul li {
+            list-style-type: none;
+        }
+        #logo{
+            margin-left: 35px;
+            margin-top: 20px;
+            margin-bottom: 15px;
+            z-index: 1;
+        }
+        #menu{
+            float:right;
+            font:bold 15px "suit";
+            margin-right: 30px;
+            margin-top: -60px;
+            text-align: center;
+            display: flex;
+            z-index: 1;
+            font-family: 'Formula1-Display-Regular';
+        }
+        #menu ul li{
+            float:right;
+            width: 140px;
+            position: relative;
+        }
+        #menu ul a:hover{
+            color:red;
+        }
+        a {
+        text-decoration: none; 
+        color: inherit; 
+        }
+
+        a:hover {
+        text-decoration: none; 
+        color: your-desired-color;
+        }
+        
+        #h12{
+            color:red;
+            font-family: 'Formula1-Display-Bold';
+            font-weight: 500;
+            font-style: normal;
+            margin-top: 100px;
+        }
+        
+    .flex-box-teams {
+        position: relative;
+        display: flex;
+        border-top: 2px solid black;
+        border-bottom: 2px solid black;
+        border-radius: 10px;    
+        margin-bottom: 50px;
+    }
+    .flex-box{
+        display: flex;
+    }
+    .teams {
+        margin-right: 50px;
+        margin-top: 30px;
+    }
+
+    .horizontal-line {
+        border-bottom: 2px solid #000;
+    }
+
+    .teams-ex{
+        font-family: 'Formula1-Display-Regular';
+        font-weight: 100;
+        font-style: normal;
+    }
+
+    
+    .score{
+        position: absolute;
+        right: 20px;
+        top: 20px;
+    }
+
+
+
+    .car-name{
+        font-family: "suit";
+        font-weight: bold;
+        font-size: 13px;
+        margin-top: -15px;
+        margin-bottom: 30px;
+    }
+    .h1-1{
+
+    }
+    
+
+    .image-with-margin {
+    margin: 20px;
+    }
+
+    .redbull:hover .flex-box-teams {
+    border-color: rgb(9, 9, 116); 
+    }
+    .redbull:hover .h1-1{
+    color: rgb(9, 9, 116); 
+    }
+
+    .mercedes:hover .flex-box-teams {
+    border-color: #00A19B
+    }
+    .mercedes:hover .h1-1 {
+    color: #00A19B
+    }
+
+    .ferrari:hover .flex-box-teams {
+    border-color: #ba0104;
+    }
+    .ferrari:hover .h1-1 {
+    color: #ba0104;
+    }
+
+    .aston-martin:hover .flex-box-teams {
+    border-color: #037A68
+    }
+    .aston-martin:hover .h1-1 {
+    color: #037A68
+    }
+
+    .maclaren:hover .flex-box-teams {
+    border-color: #FF8000
+    }
+    .maclaren:hover .h1-1 {
+    color: #FF8000
+    }
+    
+    .alpine:hover .flex-box-teams {
+    border-color: rgb(0, 133, 241); 
+    }
+    .alpine:hover .h1-1 {
+    color: rgb(0, 133, 241); 
+    }
+    
+    .williams-racing:hover .flex-box-teams {
+    border-color: #00A0DE
+    }
+    .williams-racing:hover .h1-1 {
+    color: #00A0DE
+    }
+
+    .alfa-romeo:hover .flex-box-teams {
+    border-color: #A42134
+    }
+    .alfa-romeo:hover .h1-1 {
+    color: #A42134
+    }
+
+    .hass:hover .flex-box-teams {
+    border-color: rgb(143, 143, 143); 
+    }
+    .hass:hover .h1-1 {
+    color: rgb(143, 143, 143); 
+    }
+
+    .alphatauri:hover .flex-box-teams {
+    border-color: #20394C
+    }
+    .alphatauri:hover .h1-1 {
+    color: #20394C
+    }
+    footer {
+            background-color: red;
+            color: white;
+            padding: 20px;
+            padding: 20px -30px;
+            margin: 0;
+            margin-top: 100px;
+        }
+
+        .social-icon {
+            font-size: 24px;
+            margin: 0 5px;
+        }
+        .right{
+            float:right;
+            font:bold 15px "suit";
+            margin-right: 30px;
+            margin-top: 0px;
+            text-align: center;
+            display: flex;
+            z-index: 1;
+            font-family: 'Formula1-Display-Regular';
+        }
+        .right{
+            float:right;
+            font:bold 15px "suit";
+            margin-right: 30px;
+            margin-top: 0px;
+            text-align: center;
+            display: flex;
+            z-index: 1;
+            font-family: 'Formula1-Display-Regular';
+        }
+
+        .right ul li{
+            float:right;
+            width: 140px;
+            position: relative;
+        }
+        .p1{
+            font-family: suit;
+            font-size: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="logo">
+        <a href="index.html">
+            <img src="./img/f1.svg.png" width="150">
+        </a>
+    </div>
+    <div id="menu">
+        <ul>
+            <li>
+                <a href="Winners.html">Winners</a>
+            </li>
+            <li>
+                <a href="Schedule.html">Schedule</a>
+            </li>
+            <li>
+                <a href="Drivers.html">Drivers</a>
+            </li>
+            <li>
+                <a href="Teams.html">Teams</a>
+            </li>
+            <li>
+                <a href="whatisf1.html">What is f1?</a>
+            </li>
+        </ul>
+    </div>
+    <div class="wrapper">
+        <h1 id="h12">Teams</h1>
+
+        <div class="redbull">
+            <div class="flex-box-teams">
+                <div class="teams">
+                    <img src='img/redbull.png' width="400">
+                </div>
+                <div class="teams-ex">
+                    <div class="flex-box">
+                        <div class="h1-1"><p><h1>1 Red Bull Racing &nbsp;</h1></p></div>
+                        <img src='img/redbull_logo.png' width="60">
+                        <p class="score">PTS 657</p>
+                    </div>
+                    <p class="car-name"> &nbsp;사용 차랑명 : RB19<br><br>
+
+                        &nbsp;Max Verstappen<br>
+                        &nbsp;Sergio Pérez
+                    </p>
+                </div><!--teams-ex-->
+            </div><!--flex-box-->
+        </div><!--redbull-->
+
+
+        <div class="mercedes">
+            <div class="flex-box-teams">
+                <div class="teams">
+                    <img src='img/mercedes.png' width="400">
+                </div>
+                <div class="teams-ex">
+                    <div class="flex-box">
+                        <div class="h1-1"><p><h1>2 Mercedes</h1></p></div>
+                        <img src='img/merecedes_logo.png' width="50"height="50" class="image-with-margin">
+                        <p class="score">PTS 326</p>
+                    </div>
+                    <p class="car-name"> &nbsp;사용 차랑명 : F1 W14<br><br>
+
+                        &nbsp;George Russell<br>
+                        &nbsp;Sir Lewis Hamilton
+                    </p>
+                </div>
+            </div><!--flex-box-->
+        </div><!--mercedes-->
+
+        <div class="ferrari">
+            <div class="flex-box-teams">
+                <div class="teams">
+                    <img src='img/ferrari_1.png' width="400">
+                </div>
+                <div class="teams-ex">
+                    <div class="flex-box">
+                        <div class="h1-1"><p><h1>3 Ferrari</h1></p></div>
+                        <img src='img/ferrari_logo.png' width="50"height="50" class="image-with-margin">
+                        <p class="score">PTS 298</p>
+                    </div>
+                    <p class="car-name"> &nbsp;사용 차랑명 : SF-23<br><br>
+
+                        &nbsp;Charles Leclerc<br>
+                        &nbsp;Carlos Sainz jr.
+                    </p>
+                </div>
+            </div><!--flex-box-->
+        </div><!--ferrari-->
+
+        <div class="aston-martin">
+            <div class="flex-box-teams">
+                <div class="teams">
+                    <img src='img/aston_1.png' width="400">
+                </div>
+                <div class="teams-ex">
+                    <div class="flex-box">
+                        <div class="h1-1"><p><h1>4 Aston Martin</h1></p></div>
+                        <img src='img/aston_logo.png' width="50"height="50" class="image-with-margin">
+                        <p class="score">PTS 230</p>
+                    </div>
+                    <p class="car-name"> &nbsp;사용 차랑명 : AMR23<br><br>
+
+                        &nbsp;Lance Stroll<br>
+                        &nbsp;Fernando Alonso
+                    </p>
+                </div>
+            </div><!--flex-box-->
+        </div><!--aston-martin-->
+
+
+        <div class="maclaren">
+            <div class="flex-box-teams">
+                <div class="teams">
+                    <img src='img/mcraren.png' width="400">
+                </div>
+                <div class="teams-ex">
+                    <div class="flex-box">
+                        <div class="h1-1"><p><h1>5 MacLaren</h1></p></div>
+                        <img src='img/mcraren_logo.png' width="50"height="50" class="image-with-margin">
+                        <p class="score">PTS 219</p>
+                    </div>
+                    <p class="car-name"> &nbsp;사용 차랑명 : MCL60<br><br>
+
+                        &nbsp;Lando Norris<br>
+                        &nbsp;Oscar Piastri
+                    </p>
+                </div>
+            </div><!--flex-box-->
+        </div><!--maclaren-->
+
+        <div class="alpine">
+            <div class="flex-box-teams">
+                <div class="teams">
+                    <img src='img/alphine.png' width="400">
+                </div>
+                <div class="teams-ex">
+                    <div class="flex-box">
+                        <div class="h1-1"><p><h1>6 Alpine </h1></p></div>
+                        <img src='img/alpine_logo.png' width="50"height="50" class="image-with-margin">
+                        <p class="score">PTS 90</p>
+                    </div>
+                    <p class="car-name"> &nbsp;사용 차랑명 : A523<br><br>
+
+                        &nbsp;Pierre Gasly<br>
+                        &nbsp;Esteban Ocon
+                    </p>
+                </div>
+            </div><!--flex-box-->
+        </div><!--alpine-->
+
+        <div class="williams-racing">
+            <div class="flex-box-teams">
+                <div class="teams">
+                    <img src='img/williams.png' width="400">
+                </div>
+                <div class="teams-ex">
+                    <div class="flex-box">
+                        <div class="h1-1"><p><h1>7 Williams Racing</h1></p></div>
+                        <img src='img/williams_logo.png' width="50"height="50" class="image-with-margin">
+                        <p class="score">PTS 23</p>
+                    </div>
+                    <p class="car-name"> &nbsp;사용 차랑명 : FW45<br><br>
+
+                        &nbsp;Alexander Albon<br>
+                        &nbsp;Logan Sargeant
+                    </p>
+                </div>
+            </div><!--flex-box-->
+        </div><!--williams-racing-->
+
+        <div class="alfa-romeo">
+            <div class="flex-box-teams">
+                <div class="teams">
+                    <img src='img/alfa.png' width="400">
+                </div>
+                <div class="teams-ex">
+                    <div class="flex-box">
+                        <div class="h1-1"><p><h1>8 Alfa Romeo</h1></p></div>
+                        <img src='img/alfa_logo.png' width="50"height="50" class="image-with-margin">
+                        <p class="score">PTS 23</p>
+                    </div>
+                    <p class="car-name"> &nbsp;사용 차랑명 : C43<br><br>
+
+                        &nbsp;Valtteri Bottas<br>
+                        &nbsp;Zhou Guanyu
+                    </p>
+                </div>
+            </div><!--flex-box-->
+        </div><!--alfa-romeo-->
+
+        <div class="hass">
+            <div class="flex-box-teams">
+                <div class="teams">
+                    <img src='img/haas.png' width="400">
+                </div>
+                <div class="teams-ex">
+                    <div class="flex-box">
+                        <div class="h1-1"><p><h1>9 Hass</h1></p></div>
+                        <img src='img/haas_logo.png' width="50"height="50" class="image-with-margin">
+                        <p class="score">PTS 12</p>
+                    </div>
+                    <p class="car-name"> &nbsp;사용 차랑명 : VF-23<br><br>
+
+                        &nbsp;Kevin Magnussen<br>
+                        &nbsp;Zhou Guanyu
+                    </p>
+                </div>
+            </div><!--flex-box-->
+        </div><!--hass-->
+
+        <div class="alphatauri">
+            <div class="flex-box-teams">
+                <div class="teams">
+                    <img src='img/alphata.png' width="400">
+                </div>
+                <div class="teams-ex">
+                    <div class="flex-box">
+                        <div class="h1-1"><p><h1>10 AlphaTauri</h1></p></div>
+                        <img src='img/alphata_logo.png' width="50"height="50" class="image-with-margin">
+                        <p class="score">PTS 5</p>
+                    </div>
+                    <p class="car-name"> &nbsp;사용 차랑명 : AT04<br><br>
+
+                        &nbsp;Yuki Tsunoda<br>
+                        &nbsp;Daniel Ricciardo
+                    </p>
+                </div>
+            </div><!--flex-box-->
+        </div><!--hass-->
+
+        
+        
+    </div><!--wrapper-->
+    <footer>
+ 
+        <a href="#" target="_blank">
+            <img src="img/f1-gray.png" alt="로고" class="logo" width="90"></a>
+        <ul class="right">
+            <li>
+                <a href="https://www.facebook.com/Formula1" target="_blank"><img src="img/pngegg (1).png" alt="로고" width="20" class="right">
+                    <i class="fab fa-facebook social-icon"></i>
+            </li>
+            <li>
+                <a href="https://twitter.com/f1" target="_blank">&nbsp;<img src="img/pngegg (3).png" alt="로고" width="20" class="right">
+            <i class="fab fa-twitter social-icon"></i>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/f1/" target="_blank"><img src="img/pngegg (2).png" alt="로고" width="20" class="right">
+                    <i class="fab fa-instagram social-icon"></i>
+            </li>
+            <li>
+                <a href="https://www.youtube.com/F1" target="_blank"><img src="img/pngegg (5).png" alt="로고" width="20" class="right">
+                    <i class="fab fa-instagram social-icon"></i>
+            </li>
+        </ul><br><br>
+        <p class="p1">© 2003-2023 Formula One World Championship Limited</p>
+
+    </div>
+    </footer>
+       
+    
+</body>
+</html>
